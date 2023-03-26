@@ -1,0 +1,306 @@
+Collection: Bookshelf API Test
+  Time: Sun Mar 26 2023 13:15:34 GMT+0700 (Indochina Time)
+
+  Total:
+    Iterations: 1
+    Requests: 32
+    Prerequest Scripts: 26
+    Test Scripts: 48
+    Assertions: 104
+  Failed:
+    Iterations: 0
+    Requests: 0
+    Prerequest Scripts: 0
+    Test Scripts: 0
+    Assertions: 0
+  Total Failures: 0
+
+  Requests:
+    [Mandatory] Add Book With Complete Data:
+      Method: POST
+      Url: http://localhost:9000/books
+      Status code: 201
+      Mean time per request: 60ms
+      Mean size per request: 95B
+      Total passed tests: 5
+      Total failed tests: 0
+      Tests:
+        status code should be 201: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should be an object: Failed(0) - Passed(1)
+        response body should have correct property and value: Failed(0) - Passed(1)
+        response body data should contain bookId: Failed(0) - Passed(1)
+    [Mandatory] Add Book With Finished Reading:
+      Method: POST
+      Url: http://localhost:9000/books
+      Status code: 201
+      Mean time per request: 21ms
+      Mean size per request: 95B
+      Total passed tests: 5
+      Total failed tests: 0
+      Tests:
+        status code should be 201: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should be an object: Failed(0) - Passed(1)
+        response body should have correct property and value: Failed(0) - Passed(1)
+        response body data should contain bookId: Failed(0) - Passed(1)
+    [Mandatory] Add Book Without Name:
+      Method: POST
+      Url: http://localhost:9000/books
+      Status code: 400
+      Mean time per request: 14ms
+      Mean size per request: 73B
+      Total passed tests: 4
+      Total failed tests: 0
+      Tests:
+        status code should be 400: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should be an object: Failed(0) - Passed(1)
+        response body should have correct property and value: Failed(0) - Passed(1)
+    [Mandatory] Add Book with Page Read More Than Page Count:
+      Method: POST
+      Url: http://localhost:9000/books
+      Status code: 400
+      Mean time per request: 9ms
+      Mean size per request: 101B
+      Total passed tests: 4
+      Total failed tests: 0
+      Tests:
+        status code should be 400: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should be an object: Failed(0) - Passed(1)
+        response body should have correct property and value: Failed(0) - Passed(1)
+    [Mandatory] Get All Books:
+      Method: GET
+      Url: http://localhost:9000/books
+      Status code: 200
+      Mean time per request: 10ms
+      Mean size per request: 189B
+      Total passed tests: 6
+      Total failed tests: 0
+      Tests:
+        status code should be 200: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should be an object: Failed(0) - Passed(1)
+        response body object should have correct property and value: Failed(0) - Passed(1)
+        response body data object should have a array books and contains two items: Failed(0) - Passed(1)
+        the books should have contains only id, name, and publisher property: Failed(0) - Passed(1)
+    [Mandatory] Get Detail Books With Correct Id:
+      Method: GET
+      Url: http://localhost:9000/books/pfK_X1oDMt248dPv
+      Status code: 200
+      Mean time per request: 13ms
+      Mean size per request: 324B
+      Total passed tests: 6
+      Total failed tests: 0
+      Tests:
+        response code should be 200: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should an object: Failed(0) - Passed(1)
+        response body object should contain correct property and value: Failed(0) - Passed(1)
+        response body data object should contain book object: Failed(0) - Passed(1)
+        book object should contain correct property and value: Failed(0) - Passed(1)
+    [Mandatory] Get Detail Finished Book:
+      Method: GET
+      Url: http://localhost:9000/books/txqa8Mz9vWvRmn8_
+      Status code: 200
+      Mean time per request: 15ms
+      Mean size per request: 324B
+      Total passed tests: 6
+      Total failed tests: 0
+      Tests:
+        response code should be 200: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should an object: Failed(0) - Passed(1)
+        response body object should contain correct property and value: Failed(0) - Passed(1)
+        response body data object should contain book object: Failed(0) - Passed(1)
+        book object should contain correct property and value: Failed(0) - Passed(1)
+    [Mandatory] Get Detail Books With Invalid Id:
+      Method: GET
+      Url: http://localhost:9000/books/xxxxx
+      Status code: 404
+      Mean time per request: 10ms
+      Mean size per request: 50B
+      Total passed tests: 4
+      Total failed tests: 0
+      Tests:
+        response code should be 404: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should an object: Failed(0) - Passed(1)
+        response body object should contain correct property and value: Failed(0) - Passed(1)
+    [Mandatory] Update Book With Complete Data:
+      Method: GET
+      Url: http://localhost:9000/books/pfK_X1oDMt248dPv
+      Status code: 200
+      Mean time per request: 0ms
+      Mean size per request: 0B
+      Total passed tests: 
+      Total failed tests: 
+    [Mandatory] Update Book Without Name:
+      Method: PUT
+      Url: http://localhost:9000/books/pfK_X1oDMt248dPv
+      Status code: 400
+      Mean time per request: 11ms
+      Mean size per request: 73B
+      Total passed tests: 4
+      Total failed tests: 0
+      Tests:
+        status code should be 400: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should be an object: Failed(0) - Passed(1)
+        response body should have correct property and value: Failed(0) - Passed(1)
+    [Mandatory] Update Book With Page Read More Than Page Count:
+      Method: PUT
+      Url: http://localhost:9000/books/pfK_X1oDMt248dPv
+      Status code: 400
+      Mean time per request: 11ms
+      Mean size per request: 101B
+      Total passed tests: 4
+      Total failed tests: 0
+      Tests:
+        status code should be 400: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should be an object: Failed(0) - Passed(1)
+        response body should have correct property and value: Failed(0) - Passed(1)
+    [Mandatory] Update Book with Invalid Id:
+      Method: PUT
+      Url: http://localhost:9000/books/xxxxx
+      Status code: 404
+      Mean time per request: 12ms
+      Mean size per request: 72B
+      Total passed tests: 4
+      Total failed tests: 0
+      Tests:
+        status code should be 404: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should be an object: Failed(0) - Passed(1)
+        response body should have correct property and value: Failed(0) - Passed(1)
+    [Mandatory] Delete Book with Correct Id:
+      Method: GET
+      Url: http://localhost:9000/books/pfK_X1oDMt248dPv
+      Status code: 404
+      Mean time per request: 0ms
+      Mean size per request: 0B
+      Total passed tests: 
+      Total failed tests: 
+    [Mandatory] Delete Finished book:
+      Method: GET
+      Url: http://localhost:9000/books/pfK_X1oDMt248dPv
+      Status code: 404
+      Mean time per request: 0ms
+      Mean size per request: 0B
+      Total passed tests: 
+      Total failed tests: 
+    [Mandatory] Delete Book with Invalid Id:
+      Method: DELETE
+      Url: http://localhost:9000/books/xxxxx
+      Status code: 404
+      Mean time per request: 14ms
+      Mean size per request: 68B
+      Total passed tests: 4
+      Total failed tests: 0
+      Tests:
+        status code should be 404: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should be an object: Failed(0) - Passed(1)
+        response body should have correct property and value: Failed(0) - Passed(1)
+    Add Reading and Finished Book:
+      Method: POST
+      Url: http://localhost:9000/books
+      Status code: 201
+      Mean time per request: 11ms
+      Mean size per request: 95B
+      Total passed tests: 0
+      Total failed tests: 0
+    Add Reading and Unfinished Book with "Dicoding" Name:
+      Method: POST
+      Url: http://localhost:9000/books
+      Status code: 201
+      Mean time per request: 54ms
+      Mean size per request: 95B
+      Total passed tests: 0
+      Total failed tests: 0
+    Add Unreading Books and Unfinished Book "Dicoding" Name:
+      Method: POST
+      Url: http://localhost:9000/books
+      Status code: 201
+      Mean time per request: 11ms
+      Mean size per request: 95B
+      Total passed tests: 0
+      Total failed tests: 0
+    Add Unreading Books and Unfinished Book:
+      Method: POST
+      Url: http://localhost:9000/books
+      Status code: 201
+      Mean time per request: 17ms
+      Mean size per request: 95B
+      Total passed tests: 0
+      Total failed tests: 0
+    [Optional] Get All Reading Books:
+      Method: GET
+      Url: http://localhost:9000/books?reading=1
+      Status code: 200
+      Mean time per request: 9ms
+      Mean size per request: 197B
+      Total passed tests: 6
+      Total failed tests: 0
+      Tests:
+        status code should be 200: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should be an object: Failed(0) - Passed(1)
+        response body object should have correct property and value: Failed(0) - Passed(1)
+        response body data object should have a array books and contains 2 items: Failed(0) - Passed(1)
+        the books should have contains only name and publisher property: Failed(0) - Passed(1)
+    [Optional] Get All Unreading Books:
+      Method: GET
+      Url: http://localhost:9000/books?reading=0
+      Status code: 200
+      Mean time per request: 13ms
+      Mean size per request: 196B
+      Total passed tests: 6
+      Total failed tests: 0
+      Tests:
+        status code should be 200: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should be an object: Failed(0) - Passed(1)
+        response body object should have correct property and value: Failed(0) - Passed(1)
+        response body data object should have a array books and contains at 2 items: Failed(0) - Passed(1)
+        the books should have contains only name and publisher property: Failed(0) - Passed(1)
+    [Optional] Get All Finished Books:
+      Method: GET
+      Url: http://localhost:9000/books?finished=1
+      Status code: 200
+      Mean time per request: 9ms
+      Mean size per request: 114B
+      Total passed tests: 6
+      Total failed tests: 0
+      Tests:
+        status code should be 200: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should be an object: Failed(0) - Passed(1)
+        response body object should have correct property and value: Failed(0) - Passed(1)
+        response body data object should have a array books and contains 1 items: Failed(0) - Passed(1)
+        the books should have contains only name and publisher property: Failed(0) - Passed(1)
+    [Optional] Get All Unfinished Books:
+      Method: GET
+      Url: http://localhost:9000/books?finished=0
+      Status code: 200
+      Mean time per request: 11ms
+      Mean size per request: 279B
+      Total passed tests: 6
+      Total failed tests: 0
+      Tests:
+        status code should be 200: Failed(0) - Passed(1)
+        response header Content-Type should be application/json: Failed(0) - Passed(1)
+        response body should be an object: Failed(0) - Passed(1)
+        response body object should have correct property and value: Failed(0) - Passed(1)
+        response body data object should have a array books and contains 3 items: Failed(0) - Passed(1)
+        the books should have contains only name and publisher property: Failed(0) - Passed(1)
+    [Optional] Get All Books Contains "Dicoding" Name:
+      Method: DELETE
+      Url: http://localhost:9000/books/9olYOVsbEW4rb0p-
+      Status code: 200
+      Mean time per request: 0ms
+      Mean size per request: 0B
+      Total passed tests: 
+      Total failed tests: 
